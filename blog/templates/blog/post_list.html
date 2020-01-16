@@ -7,17 +7,10 @@
 	<div>
 		<h1><a href = "/">Django Michael</a></h1>
 	</div>
-
-	<div>
-		<p>published: 15.01.2020, 22:22</p>
-		<h2><a href = "/">My first post</a></h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam consectetur vehicula. Nulla sed blandit arcu.</p>
-	</div>
-
-	<div>
-		<p>published: 15.01.2020, 22:25</p>
-		<h2><a href = "/">My second post</a></h2>
-		<p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-	</div>
+{% for post in posts %}
+	<p>published: {{post.published_date}}</p>
+	<h1><a href = "">{{post.title}}</a></h1>
+	<p>{{post.text|linebreaksbr}}</p>
+{% endfor %}
 </body>
 </html>
